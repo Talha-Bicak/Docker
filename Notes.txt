@@ -1,0 +1,15 @@
+Docker Daemon (dockerd)
+
+Docker'ın çekirdeğidir ve Docker client (docker komutları) ile etkileşime girerek Docker konteynerlerinin oluşturulması, çalıştırılması ve yönetilmesini sağlar. Docker daemon, arka planda çalışarak konteynerlerin durumunu, ağ ayarlarını ve veri depolama işlemlerini yönetir. Ayrıca, Docker Hub veya özel depolardan imajları indirir ve yerel depoda saklar.
+
+Belirli bir imajı arama: Docker daemon, bir konteyner oluşturulmak istendiğinde yerel sistemde belirli bir imajı arar. Eğer imaj yerel depoda bulunmazsa, varsayılan olarak Docker Hub'dan indirir.
+
+
+Konteyner Sürekliliği
+Docker konteynerleri, içlerinde çalışan uygulamalar veya işlemler tarafından ayakta tutulur. Eğer bir konteynerda çalıştırılacak bir komut veya işlem verilmezse, konteyner çalışmaya başladıktan hemen sonra durur.
+
+Konteynerı ayakta tutacak bir komut verilmezse: Docker konteynerleri, içlerinde çalışan işlemler sona erdiğinde otomatik olarak durur. Örneğin, docker run komutu ile bir konteyner başlattığınızda, eğer bu komut sonsuz döngüde çalışacak bir işlem içermezse (örneğin bir web sunucusu veya sürekli çalışan bir hizmet), konteyner komut tamamlanır tamamlanmaz durur. Bu nedenle, bir konteynerın sürekli çalışmasını istiyorsanız, onu ayakta tutacak bir işlem veya hizmet çalıştırmanız gerekir. Örneğin:
+
+docker run -d ubuntu tail -f /dev/null
+
+Bu komut, Ubuntu imajını kullanarak bir konteyner başlatır ve tail -f /dev/null komutunu çalıştırır. Bu komut, sonsuz bir döngüde çalışarak konteynerın sürekli açık kalmasını sağlar.

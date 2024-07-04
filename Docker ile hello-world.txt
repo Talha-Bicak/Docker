@@ -1,0 +1,42 @@
+Bu txt dosyasındaki komutlar docker teknolojilerine giriş yapan geliştiricilerin konteyner yönetimini kolaylaştırmak için çeşitli görevleri yerine getirir.
+
+
+1. docker version
+
+Bu komut, yüklü olan Docker'ın sürüm bilgilerini gösterir. Bu bilgiler arasında Docker Engine, API versiyonu, Go versiyonu, Git commit bilgisi, build tarihi ve işletim sistemi bilgileri yer alır.
+
+2. docker -D info
+
+Bu komut, Docker'ın ayrıntılı (debug modunda) sistem bilgilerini görüntüler. Çıktıda Docker daemon'un çalışma durumu, kullanılan sürüm, yapılandırma bilgileri, depolama sürücüsü bilgileri, ağ ayarları, kurulu konteynerler, imajlar ve daha fazlası yer alır.
+
+3. docker --help
+
+Bu komut, Docker komutları ve seçenekleri hakkında yardım bilgilerini görüntüler. Komutlar ve alt komutlar hakkında kısa açıklamalar ve kullanım şekilleri yer alır.
+
+4. docker container run
+
+Bu komut, belirli bir imajdan yeni bir konteyner oluşturur ve çalıştırır. İmajın lokalde bulunmaması durumunda Docker Hub'dan indirir. docker container run komutu, docker container create ve docker container start komutlarının birleşik bir şeklidir.
+
+5. docker container run hello-world
+
+Bu komut, hello-world adlı basit bir Docker imajından bir konteyner oluşturur ve çalıştırır. Bu imaj, Docker'ın kurulumunun doğru yapıldığını ve konteynerların düzgün çalıştığını test etmek için kullanılır. İmaj çalıştırıldığında, başarılı bir kurulum mesajı içeren bir çıktı verir.
+
+6. docker container run alpine
+
+Bu komut, alpine adlı küçük ve minimalist bir Linux dağıtımından bir konteyner oluşturur ve çalıştırır. Alpine Linux, Docker konteynerları için hafif ve güvenli bir temel imaj olarak yaygın şekilde kullanılır.
+
+7. docker container run alpine:latest
+
+Bu komut, alpine imajının en son sürümünü (etiketi latest olan) kullanarak bir konteyner oluşturur ve çalıştırır. Eğer etiket belirtilmezse varsayılan olarak latest kullanılır.
+
+8. docker container run talha-bicak/demo
+
+Bu komut, talha-bicak adlı özel bir Docker Hub deposundan demo adlı imajı kullanarak bir konteyner oluşturur ve çalıştırır. Bu, kullanıcı tarafından oluşturulmuş ve Docker Hub'a yüklenmiş özel imajlar için kullanılır.
+
+9. docker container run python:3.1
+
+Bu komut, python adlı Docker Hub imajının 3.1 sürümünü kullanarak bir konteyner oluşturur ve çalıştırır. Bu imaj, Python programlama dilinin belirtilen sürümünü içerir ve Python tabanlı uygulamalar geliştirmek için kullanılır.
+
+10. docker container run --name proje1 python:3
+
+Bu komut, python imajının 3 sürümünü kullanarak proje1 adı verilen bir konteyner oluşturur ve çalıştırır. --name parametresi, konteynere özel bir ad vermek için kullanılır. Bu, konteyneri yönetirken veya ona erişirken kolaylık sağlar.

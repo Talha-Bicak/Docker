@@ -1,0 +1,53 @@
+Bu komutlar, Docker konteynerlerinin durumunu yönetmek ve sistem kaynaklarını etkin bir şekilde kullanmak için gereklidir. Konteynerlerin başlatılması, durdurulması, silinmesi ve durumlarının yönetilmesi gibi işlemler bu komutlarla kolayca yapılabilir.
+
+1. docker container start proje1
+
+Bu komut, proje1 adındaki durdurulmuş bir konteyneri yeniden başlatır. Durdurulan bir konteyneri çalıştırarak içindeki uygulamanın kaldığı yerden devam etmesini sağlar.
+
+2. docker container stop proje1
+
+Bu komut, proje1 adındaki çalışan bir konteyneri durdurur. Konteynerin çalışmasını durdurur ve kaynaklarını serbest bırakır.
+
+3. docker container pause proje1
+
+Bu komut, proje1 adındaki çalışan bir konteyneri askıya alır. Konteynerin işlemlerini duraklatır, ancak konteyner durdurulmaz ve bellekte kalır.
+
+4. docker container restart proje1
+
+Bu komut, proje1 adındaki konteyneri yeniden başlatır. Önce konteyneri durdurur, ardından yeniden başlatır. Bu işlem, konteynerin sıfırlanmasını ve temiz bir başlangıç yapmasını sağlar.
+
+5. docker container unpause proje1
+
+Bu komut, proje1 adındaki askıya alınmış bir konteyneri yeniden çalıştırır. Askıya alınan işlemleri kaldığı yerden devam ettirir.
+
+6. docker container rm proje1
+
+Bu komut, proje1 adındaki durdurulmuş bir konteyneri siler. Konteyner silindikten sonra geri getirilemez.
+
+7. docker container rm --force proje1
+
+Bu komut, proje1 adındaki çalışan bir konteyneri zorla durdurur ve siler. Çalışan bir konteynerin silinmesi gerektiğinde kullanılır.
+
+8. docker container ls
+
+Bu komut, yalnızca çalışan konteynerleri listelemek için kullanılır. Çıktıda çalışan konteynerlerin ID, isim, durum ve diğer bilgileri yer alır.
+
+9. docker container ls --all
+
+Bu komut, çalışan veya durdurulmuş tüm konteynerleri listelemek için kullanılır. Çıktıda tüm konteynerlerin ID, isim, durum ve diğer bilgileri yer alır.
+
+10. docker container ls --quiet
+
+Bu komut, sadece konteyner ID'lerini listelemek için kullanılır. Çıktıda yalnızca konteynerlerin ID bilgileri yer alır.
+
+11. docker container rename eski_ad yeni_ad
+
+Bu komut, belirli bir konteynerin adını değiştirir. eski_ad yerine konteynerin mevcut adını, yeni_ad yerine yeni vermek istediğiniz adı yazarsınız.
+
+12. docker container rm $(docker container ls -a -q)
+
+Bu komut, tüm durdurulmuş konteynerleri siler. docker container ls -a -q komutu ile tüm konteynerlerin ID'lerini alır ve bu ID'leri docker container rm komutuna ileterek silme işlemini gerçekleştirir.
+
+13. docker container prune
+
+Bu komut, durdurulmuş tüm konteynerleri siler. Bu komut, sistemde kullanılmayan konteynerları temizlemek için kullanılır.
